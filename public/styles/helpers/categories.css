@@ -1,0 +1,39 @@
+div#categories div.category {
+	font-size: 13px;
+	font-weight: bold;
+	margin-bottom: 8px;
+	overflow: hidden;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 160px;
+	padding-top: 10px;
+	position: relative;
+}
+
+div#categories div.category a.image {
+	background: #eee;
+	border: 1px solid #000;
+	float: left;
+	height: 80px;
+	line-height: 80px;
+	margin-right: 20px;
+	text-align: center;
+	width: 80px;
+}
+
+div#categories div.category a.title {
+	display: block;
+	font-size: 24px;
+}
+
+div#categories div.category span.num-bets {
+	background: #eee;
+	border: 1px solid #000;
+	height: 60px;
+	line-height: 60px;
+	position: absolute;
+	right: 10px;
+	text-align: center;
+	top: 10px;
+	width: 60px;
+}

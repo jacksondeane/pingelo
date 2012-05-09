@@ -1,0 +1,74 @@
+div#users div.user {
+	font-size: 13px;
+	font-weight: bold;
+	margin-bottom: 8px;
+	overflow: hidden;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 160px;
+	padding-top: 10px;
+	position: relative;
+}
+
+div#users div.user a.image, div#user a.image {
+	background: #eee;
+	border: 1px solid #000;
+	float: left;
+	height: 80px;
+	line-height: 80px;
+	margin-right: 20px;
+	text-align: center;
+	width: 80px;
+}
+
+div#users div.user a.title, div#user a.title {
+	display: block;
+	font-size: 24px;
+}
+
+div#users div.user div.prize-meter, div#user div#prize-meter {
+	background: #eee;
+	border: 3px solid #000;
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	width: 400px;
+}
+
+div#users div.user span.num-bets {
+	background: #eee;
+	border: 1px solid #000;
+	height: 60px;
+	line-height: 60px;
+	position: absolute;
+	right: 10px;
+	text-align: center;
+	top: 10px;
+	width: 60px;
+}
+
+div#user {
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+
+div#user span#user-image {
+	background: #eee;
+	border: 1px solid #000;
+	float: left;
+	height: 150px;
+	line-height: 150px;
+	margin-right: 20px;
+	text-align: center;
+	width: 150px;
+}
+
+div#user div#user-stats {
+	float: left;
+	margin-right: 20px;
+}
+
+div#user div#prize-meter {
+	width: 300px;
+}

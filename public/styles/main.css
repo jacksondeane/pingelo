@@ -1,0 +1,406 @@
+html, body {
+	background: #fff;
+	color: #000;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+}
+
+a, a:visited {
+	color: #00a1ff;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+em {
+	font-style: italic;
+}
+
+strong {
+	font-weight: bold;
+}
+
+a.button, a.button:visited {
+	background: url(../images/buttons/normal.png) top left no-repeat;
+	color: #fff;
+	font-size: 14px;
+	height: 36px;
+	padding-top: 12px;
+	text-align: center;
+	width: 114px;
+}
+
+a.button.negative-button {
+	background: url(../images/buttons/negative-normal.png) top left no-repeat;
+	color: #fff;
+	font-size: 14px;
+	height: 36px;
+	padding-top: 12px;
+	text-align: left;
+	padding-left: 11px;
+	width: 114px;
+}
+a.button:hover {
+	background: url(../images/buttons/hover-positive.png) top left no-repeat;
+	text-decoration: none;
+}
+
+a.button.negative-button:hover {
+	background: url(../images/buttons/hover-negative.png) top left no-repeat;
+	text-decoration: none;
+}
+
+input.submit {
+background:url("../images/buttons/normal.png") no-repeat scroll left top transparent;
+border:0 none;
+color:#FFFFFF;
+float:none;
+font-size:14px;
+height:50px;
+padding-bottom:13px;
+text-align:center;
+width:114px;
+}
+
+input.submit:hover {
+	background: url(../images/buttons/hover-positive.png) top left no-repeat;
+	text-decoration: none;
+}
+
+.center {
+	text-align: center;
+}
+
+.odd {
+	background: #fffcf0;
+}
+
+.even {
+	background: #f4f4f4;
+}
+
+div#container {
+	background: #fff;
+	margin: auto;
+}
+
+div#header-container {
+	height: 116px;
+	background: url(../images/layout/header.png) top left repeat-x;
+}
+
+div#header {
+	height: 123px;
+	margin: auto;
+	position: relative;
+	width: 960px;
+} 
+
+div#header h1 a {
+	display: block;
+	height: 54px;
+	position: relative;
+	top: 15px;
+	width: 237px;
+}
+
+div#header h1 a span {
+	font-size: 24px;
+}
+
+div#nav {
+	color: #333;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+
+div#nav ul {
+	display: block;
+	overflow: hidden;
+}
+
+div#nav ul li {
+	float: left;
+}
+
+div#nav ul li a, div#nav ul li a:visited {
+	color: #96a7ae;
+	float: left;
+	font-size: 15px;
+	height: 80px;
+	line-height: 80px;
+	padding-left: 12px;
+	padding-right: 12px;
+	text-align: center;
+	text-decoration: none;
+}
+
+div#nav ul li a:hover {
+	color: #fff;
+}
+
+div#nav ul li a:active, div#nav ul li.selected a {
+	background: url(../images/layout/nav-active.png) 0px -2px repeat-x;
+	color: #fff;
+}
+
+div#header div#account {
+	bottom: 10px;
+	position: absolute;
+	right: 10px;
+	width: 500px;
+}
+
+div#header div#account form {
+	float: left;
+	margin-right: 20px;
+}
+
+div#header div#account a, div#header div#account a:visited {
+	color: #ff5302;
+}
+
+div#main {
+	margin: auto;
+	overflow: hidden;
+	width: 960px;
+}
+
+div#modal-container div#main {
+	width: auto;
+}
+
+div#sidebar {
+	float: right;
+	margin-left: 20px;
+	width: 225px;
+}
+
+div#sidebar h3 {
+	border-bottom: 1px solid #999999;
+	color: #000000;
+	font-size: 1.2em;
+	margin-bottom: 8px;
+	font-weight: bold;
+	padding-bottom: 4px;
+}
+
+div#content {
+	padding-bottom: 15px;
+	padding-left: 15px;
+}
+
+div#modal-container div#content {
+	padding: 15px;
+}
+
+div#content h2 {
+	border-bottom: 1px solid #e0e0e0;
+	color: #ff5302;
+	font-size: 24px;
+	margin: 20px;
+	margin-top: 8px;
+	padding-bottom: 5px;
+	text-transform: uppercase;
+}
+
+div#content h3 {
+	color: #555;
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+
+div#footer {
+	background: #fff;
+	color: #5ca1ff;
+	font-size: 11px;
+	height: 78px;
+	line-height: 78px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+div#footer ul {
+	display: block;
+}
+
+div#footer ul li {
+	border-left: 1px solid #5ca1ff;
+	display: inline;
+	padding-left: 10px;
+	padding-right: 6px;
+}
+
+div#footer ul li.first {
+	border-left: 0px;
+}
+
+div#footer a, div#footer a:visited {
+	color: #5ca1ff;
+}
+
+div#footer a:hover {
+	text-decoration: underline;
+}
+
+table.styled-table {
+	width: 100%;
+}
+
+table.styled-table tr {
+	margin-bottom: 10px;
+}
+
+table.styled-table tr th {
+	padding: 5px;
+}
+
+table.styled-table tr td {
+	font-size: 14px;
+	line-height: 50px;
+	padding-left: 8px;
+	padding-right: 8px;
+	color:  #333;
+}
+
+table.styled-table.has-row-margins tr.odd,
+table.styled-table.has-row-margins tr.even
+{
+	background: #fff;
+}
+
+table.styled-table.has-row-margins tr td {
+	padding: 0px;
+}
+
+table.styled-table.has-row-margins tr td div {
+	margin-bottom: 10px;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+table.styled-table.has-row-margins tr.odd td div {
+	background: #fffcf0;
+}
+
+table.styled-table.has-row-margins tr.even td div {
+	background: #edf6fe;
+}
+
+table.styled-table.has-row-margins tr td div.no-background {
+	background: #fff;
+}
+
+table.styled-table.has-row-margins tr td div.larger {
+	font-size: 20px;
+}
+
+div.pagination {
+	margin-bottom: 20px;
+	margin-top: 20px;
+	overflow: hidden;
+}
+
+div.pagination a, div.pagination a:visited {
+	border: 1px solid #d2d2d2;
+	float: left;
+	margin-right: 5px;
+	padding-bottom: 2px;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 2px;
+	text-decoration: none;
+}
+
+div.pagination span.current-page {
+	background: #E7E8E9;
+	border: 1px solid #555;
+	float: left;
+	margin-right: 5px;
+	padding-bottom: 2px;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 2px;
+}
+
+div#filters {
+	border-bottom: 1px solid #e0e0e0;
+	color: #9c9c9c;
+	font-size: 13px;
+	font-weight: bold;
+	margin-top: 17px;
+	padding-bottom: 5px;
+}
+
+div#filters strong {
+	color: #000;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+div#filters strong a {
+	color: #00a1ff;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+div#events div.event {
+	font-size: 13px;
+	font-weight: bold;
+	margin-bottom: 8px;
+	overflow: hidden;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 160px;
+	padding-top: 10px;
+	position: relative;
+}
+
+div#events div.event a.image {
+	background: #eee;
+	border: 1px solid #000;
+	float: left;
+	height: 80px;
+	line-height: 80px;
+	margin-right: 20px;
+	text-align: center;
+	width: 80px;
+}
+
+div#events div.event a.title {
+	display: block;
+	font-size: 24px;
+}
+
+div#events div.event span.num-bets {
+	background: #eee;
+	border: 1px solid #000;
+	height: 60px;
+	line-height: 60px;
+	position: absolute;
+	right: 10px;
+	text-align: center;
+	top: 10px;
+	width: 60px;
+}
+
+div#rules1 {
+	color: #000;
+	font-weight: normal;
+	font-size: 13px;
+}
+
+div#rules2 {
+	color: #003d5e;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+div#rules3 {
+	color: #835331;
+	font-weight: bold;
+	font-size: 17px;
+}

@@ -1,0 +1,58 @@
+div#prizes div#prizes-list {
+	overflow: hidden;
+}
+
+div#prizes div.prize {
+	float: left;
+	height: 100px;
+	margin-bottom: 20px;
+	margin-right: 20px;
+	width: 210px;
+}
+
+div#prizes div.prize a.image {
+	background: #eee;
+	border: 3px solid #000;
+	float: left;
+	height: 100px;
+	line-height: 100px;
+	margin-right: 20px;
+	text-align: center;
+	width: 100px;
+}
+
+div#prizes div.prize a.title {
+	display: block;
+	margin-top: 20px;
+}
+
+div#points {
+	font-size: 24px;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+
+div#points div#prize-meter {
+	background: #eee;
+	border: 3px solid #000;
+	float: right;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	width: 400px;
+}
+
+div#prize {
+	overflow: hidden;
+}
+
+div#prize div#prize-image {
+	background: #eee;
+	border: 3px solid #000;
+	float: right;
+	height: 200px;
+	line-height: 200px;
+	margin-right: 20px;
+	text-align: center;
+	width: 200px;
+}

@@ -1,0 +1,29 @@
+div#intro {
+	overflow: hidden;
+}
+
+div#intro div#intro-image {
+	background: #eee;
+	border: 3px solid #000;
+	float: left;
+	height: 300px;
+	line-height: 300px;
+	text-align: center;
+	width: 400px;
+}
+
+div#intro div#intro-actions {
+	float: left;
+	font-size: 24px;
+	line-height: 36px;
+	margin-left: 20px;
+}
+
+div#intro div#intro-actions a.home-button, div#intro div#intro-actions a.home-button:visited {
+	background: #eee;
+	border: 3px solid #000;
+	display: block;
+	margin-top: 20px;
+	padding: 20px;
+	text-align: center;
+}

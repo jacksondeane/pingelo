@@ -1,0 +1,93 @@
+form.styled-form fieldset {
+	border: 0px;
+}
+
+form.styled-form fieldset legend {
+	font-weight: bold;
+}
+
+form.styled-form fieldset ol {
+    margin: 0px;
+    padding: 0px;
+}
+
+form.styled-form fieldset ol li {
+    list-style: none;
+    padding: 3px;
+	clear: both;
+}
+
+form.styled-form fieldset ol li.center {
+	text-align: center;
+}
+
+form.styled-form fieldset ol li.left {
+	text-align: left;
+}
+
+form.styled-form fieldset ol li.right {
+	text-align: right;
+}
+
+
+form.styled-form fieldset ol li label {
+	float: left;
+	padding: 3px;
+	width: 120px;
+}
+
+form.styled-form fieldset ol li label.nowrap {
+	white-space: nowrap;
+	width: auto;
+}
+
+form.styled-form-newline-labels fieldset ol li label {
+	display: block;
+	float: none;
+	width: auto;
+}
+
+form.styled-form fieldset ol li label.inline {
+	display: inline;
+	float: none;
+	width: auto;
+}
+
+form.styled-form fieldset ol li label.error, label.error {
+	color: red;
+	display: block;
+	float: none;
+	font-size: 11px;
+	font-weight: normal;
+/*	margin-left: 35%;*/
+	width: auto;
+}
+
+form.styled-form fieldset ol li label.error {
+	text-align: right;
+}
+
+form.styled-form fieldset ol li input {
+	border: 2px solid #a7a7a7;
+	padding: 3px;
+}
+
+form.styled-form-wide-inputs fieldset ol li input {
+	width: 100%;
+}
+
+form.styled-form input.button {
+	background: #eaeaea;
+	border: 1px solid #ccc;
+	color: #000;
+	font-size: 12px;
+	padding: 3px;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: auto;
+}
+
+form.styled-form input.button:active {
+	background: #ccc;
+	color: #000;
+}

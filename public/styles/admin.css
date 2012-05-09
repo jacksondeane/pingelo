@@ -1,0 +1,682 @@
+html, body {
+	background: #d2d2d2;
+	color: #3a3a3a;
+	font-family: tahoma;
+	font-size: 12px;
+}
+
+a, a:visited {
+	color: #6d6e71;
+}
+
+a:hover {
+	background: #6d6e71;
+	color: #fff;
+}
+
+a.image img {
+	display: block;
+}
+
+h1 {
+	color: #888;
+	font-size: 18px;
+	float: left;
+	font-weight: normal;
+	line-height: 26px;
+	padding-left: 15px;
+}
+
+h1 span {
+	color: #555;
+}
+
+p {
+	margin-bottom: 10px;
+}
+
+strong {
+	font-weight: bold;
+}
+
+table.center {
+	margin: auto;
+	text-align: inherit;
+}
+
+table.wide {
+	width: 100%;
+}
+
+table tr th {
+	font-weight: bold;
+}
+
+table tr td, table tr th {
+	padding: 5px;
+	vertical-align: top;
+}
+
+table tr.odd {
+	background: #e7e8e9;
+	color: #4a4a4a;
+}
+
+table tr.selected {
+	background: #ffffcc;
+	color: #3a3a3a;
+}
+
+.center {
+	text-align: center;
+}
+
+.left {
+	text-align: left;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.right {
+	text-align: right;
+}
+
+div#container {
+	background: #fff;
+	margin: auto;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	overflow: hidden;
+	padding: 10px;
+	width: 960px;
+}
+
+div#info {
+	background: #d2d2d2;
+	color: #767676;
+	font-size: 12px;
+	height: 30px;
+	position: relative;
+}
+
+div#info a, div#info a:visited {
+	color: #0f75bc;
+}
+
+div#info a:hover {
+	background: #585858;
+	color: #d2d2d2;
+}
+
+div#info a#logout, div#info a#logout:visited {
+	background: #0f75bc;
+	color: #fff;
+	padding-bottom: 1px;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-decoration: none;
+}
+
+div#info a#logout:hover {
+	background: #fff;
+	color: #0f75bc;
+}
+
+div#info em {
+	color: #a1a1a1;
+}
+
+div#info strong {
+	color: #000;
+	font-weight: normal;
+}
+
+div#info span#time {
+	float: left;
+	line-height: 30px;
+	margin-left: 10px;
+}
+
+div#info span#account {
+	float: right;
+	line-height: 30px;
+	margin-right: 10px;
+}
+
+div#nav {
+	background: #585858;
+	border-bottom: 1px solid #fff;
+	color: #d2d2d2;
+	overflow: hidden;
+	position: relative;
+}
+
+div#nav ul {
+	bottom: 0px;
+	margin: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 6px;
+}
+
+div#nav ul li {
+	float: left;
+	margin-top: 4px;
+}
+
+div#nav ul li a {
+	background: #6d6e71;
+	color: #bdbdbd;
+	display: block;
+	font-size: 14px;
+	margin-left: 3px;
+	margin-right: 3px;
+	padding-bottom: 3px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 0px;
+	text-decoration: none;
+	text-transform: lowercase;
+}
+
+div#nav ul li a:visited {
+	color: #bdbdbd;
+}
+
+div#nav ul li a:hover {
+	background: #d2d2d2;
+	color: #767676;
+}
+
+div#nav ul li.active a {
+	background: #a9a9a9;
+	bottom: -1px;
+	color: #585858;
+	position: relative;
+}
+
+div#nav a#logout {
+	padding: 3px;
+	position: absolute;
+	right: 20px;
+	top: 6px;
+}
+
+div#nav a#logout, div#nav a#logout:visited {
+	color: #fff;
+}
+
+div#nav a#logout:hover {
+	background: #fff;
+	color: #000;
+}
+
+div#subnav {
+	background: #a9a9a9;
+	border-bottom: 1px solid #3a3a3a;
+	color: #585858;
+	height: 30px;
+	position: relative;
+}
+
+div#subnav ul {
+	bottom: 0px;
+	float: left;
+	margin: auto;
+	position: absolute;
+	right: 15px;
+}
+
+div#subnav ul li {
+	float: left;
+	position: relative;
+}
+
+div#subnav ul li a {
+	background: #585858;
+	color: #d2d2d2;
+	display: block;
+	font-size: 14px;
+	margin-left: 3px;
+	margin-right: 3px;
+	padding-bottom: 3px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 0px;
+	text-decoration: none;
+	text-transform: lowercase;
+}
+
+div#subnav ul li a:visited {
+	color: #d2d2d2;
+}
+
+div#subnav ul li a:hover {
+	background: #d2d2d2;
+	color: #767676;
+}
+
+div#subnav ul li.active a {
+	background: #fff;
+	bottom: -1px;
+	color: #585858;
+	position: relative;
+}
+
+div#main {
+	overflow: hidden;
+}
+
+div#heading {
+	border-bottom: 1px dotted #bdbdbd;
+	margin-bottom: 7px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 20px;
+	overflow: hidden;
+	padding-bottom: 5px;
+	position: relative;
+}
+
+div#heading h2 {
+	border-right: 1px dotted #bdbdbd;
+	color: #6d6e71;
+	float: left;
+	font-family: Georgia, serif;
+	font-size: 20px;
+	font-weight: bold;
+	margin-right: 10px;
+	padding-bottom: 10px;
+	text-align: right;
+	width: 235px;
+}
+
+div#heading h2 span {
+	display: block;
+	margin-right: 10px;
+}
+
+div#breadcrumbs {
+	color: #939393;
+	float: left;
+	font-size: 15px;
+	height: 25px;
+	left: 245px;
+	margin-top: -17px;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+}
+
+div#breadcrumbs ul {
+	overflow: hidden;
+}
+
+div#breadcrumbs ul li {
+	float: left;
+}
+
+div#breadcrumbs ul li a, div#breadcrumbs ul li a:visited {
+	color: #939393;
+	text-decoration: none;
+	text-transform: lowercase;
+}
+
+div#breadcrumbs ul li.active a {
+	color: #0f75bc;
+}
+
+div#breadcrumbs ul li a:hover {
+	background: #939393;
+	color: #fff;
+}
+
+div#controls {
+	float: left;
+	margin-left: 10px;
+	margin-top: 20px;
+	width: 225px;
+}
+
+div#controls h2 {
+	border-bottom: 1px dotted #bdbdbd;
+	color: #6d6e71;
+	font-family: Georgia, serif;
+	font-size: 20px;
+	font-weight: bold;
+	padding-bottom: 16px;
+	margin-bottom: 20px;
+	text-align: right;
+}
+
+div#actions {
+	float: left;
+	margin-left: 10px;
+	padding-top: 15px;
+	text-align: right;
+	width: 225px;
+}
+
+div#actions ul li {
+	float: right;
+	margin-bottom: 10px;
+	width: 140px;
+}
+
+div#actions ul li#item-action-view {
+	width: 130px;
+}
+
+div#actions ul li#item-action-edit {
+	width: 150px;
+}
+
+div#actions ul li#item-action-delete {
+	width: 140px;
+}
+
+div#actions ul li a, div#actions ul li a:visited {
+	background: #a9a9a9;
+	color: #585858;
+	display: block;
+	font-size: 12px;
+	font-weight: bold;
+	height: 20px;
+	line-height: 18px;
+	text-align: right;
+	text-decoration: none;
+	text-transform: lowercase;
+}
+
+div#actions ul li.active a {
+	background: #0F75BC;
+	color: #fff;
+}
+
+div#actions ul li a:hover {
+	background: #d2d2d2;
+	color: #767676;
+}
+
+div#actions ul li a span {
+	display: block;
+	padding-right: 10px;
+}
+
+div#body {
+	border-left: 1px dotted #bdbdbd;
+	margin-left: 245px;
+	margin-right: 10px;
+	padding-bottom: 15px;
+	padding-left: 10px;
+	padding-top: 15px;
+}
+
+div#body h3 {
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+div#footer {
+	background: #d2d2d2;
+	color: #a1a1a1;
+	font-size: 14px;
+	height: 30px;
+	line-height: 30px;
+	margin-top: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: right;
+}
+
+div#footer a, div#footer a:visited {
+	color: #585858;
+	text-transform: lowercase;
+}
+
+div#footer a:hover {
+	background: #585858;
+	color: #fff;
+}
+
+
+
+
+
+form.styled-form {
+	color: #787878;
+	font-size: 13px;
+}
+
+form.styled-form fieldset {
+	border: 0px;
+}
+
+form.styled-form fieldset legend, strong.item-title {
+	color: #333;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 5px;
+	width: 100%;
+}
+
+form.styled-form-fancy-legends fieldset legend, form.styled-form fieldset legend.fancy {
+	background: #E6E7E8;
+	color: #585858;
+	font-size: 12px;
+	height: 30px;
+	line-height: 30px;
+	margin-bottom: 3px;
+	text-align: center;
+}
+
+form.styled-form fieldset ol {
+    margin: 0px;
+    padding: 0px;
+}
+
+form.styled-form fieldset ol li {
+    list-style: none;
+	clear: both;
+	margin-bottom: 3px;
+}
+
+form.styled-form fieldset ol li.center {
+	text-align: center;
+}
+
+form.styled-form fieldset ol li.left {
+	text-align: left;
+}
+
+form.styled-form fieldset ol li.right {
+	text-align: right;
+}
+
+form.styled-form fieldset ol li label {
+	float: left;
+	font-size: 12px;
+	height: 25px;
+	line-height: 25px;
+	margin-right: 5px;
+	text-align: right;
+	width: 90px;
+}
+
+form.styled-form-newline-labels fieldset ol li label, form.styled-form fieldset ol li label.newline {
+	display: block;
+	float: none;
+	width: auto;
+}
+
+form.styled-form fieldset ol li label.inline {
+	display: inline;
+	float: none;
+	width: auto;
+}
+
+form.styled-form fieldset ol li label.error, label.error {
+	color: red;
+	display: block;
+	float: none;
+	font-size: 11px;
+	font-weight: normal;
+	width: auto;
+}
+
+form.styled-form fieldset ol li label.error {
+	text-align: right;
+}
+
+form.styled-form-smaller-labels fieldset ol li label, form.styled-form fieldset ol li label.smaller {
+	width: 42px;
+}
+
+form.styled-form fieldset ol li input {
+	border: 1px solid #D1D3D4;
+	color: #333;
+	font-size: 13px;
+	height: 25px;
+	line-height: 25px;
+	padding-left: 3px;
+	padding-right: 3px;
+	width: 170px;
+}
+
+form.styled-form-wide-inputs fieldset ol li input {
+	width: 100%;
+}
+
+form.styled-form fieldset ol li span.text {
+	color: #333;
+	height: 25px;
+	line-height: 25px;
+	padding-left: 3px;
+	padding-right: 3px;
+	width: 170px;
+}
+
+form.styled-form input.button {
+	background: #d1d3d4;
+	border: 1px solid #939393;
+	color: #333;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 3px;
+	padding-left: 20px;
+	padding-right: 20px;
+	width: auto;
+}
+
+form.styled-form input.button:active {
+	background: #ccc;
+	color: #000;
+}
+
+form.styled-form div.submit {
+	background: #E6E7E8;
+	color: #585858;
+	font-size: 12px;
+	font-weight: bold;
+	height: 30px;
+	line-height: 30px;
+	margin-bottom: 3px;
+	text-align: center;
+}
+
+form.styled-form div.submit input.button {
+	margin-top: 2px;
+}
+
+form#login-form.styled-form {
+	margin: auto;
+	padding-top: 10px;
+	text-align: center;
+	width: 440px;
+}
+
+form#login-form.styled-form ol li label {
+	width: 172px;
+}
+
+form#login-form.styled-form ol li input {
+	width: 255px;
+}
+
+form#login-form.styled-form div#login-message {
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+
+form#login-form.styled-form input.button {
+	margin-right: 5px;
+}
+
+form#confirm-form.styled-form {
+	padding-top: 10px;
+	text-align: center;
+}
+
+form#confirm-form.styled-form div#confirm-message {
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+
+form#confirm-form.styled-form input.button {
+	margin-right: 5px;
+}
+
+
+
+
+
+table.styled-table {
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+table.styled-table td.item-table-key {
+	white-space: nowrap;
+}
+
+
+
+
+div.pagination {
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+
+div.pagination div.pagination-description {
+	color: #939393;
+}
+
+div.pagination div.pagination-links {
+	margin-top: 5px;
+}
+
+div.pagination a, div.pagination a:visited {
+	border: 1px solid #d2d2d2;
+	float: left;
+	margin-right: 5px;
+	padding-bottom: 2px;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 2px;
+	text-decoration: none;
+}
+
+div.pagination span.current-page {
+	background: #E7E8E9;
+	border: 1px solid #555;
+	float: left;
+	margin-right: 5px;
+	padding-bottom: 2px;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 2px;
+}

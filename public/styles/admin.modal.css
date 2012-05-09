@@ -1,0 +1,19 @@
+div#modal-container div#main {
+	margin: auto;
+	padding-top: 40px;
+	width: 600px;
+}
+
+div#modal-container div#main h1 {
+	color: #6D6E71;
+	float: none;
+	font-family: Georgia, serif;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 0px;
+	text-align: center;
+}
+
+div#modal-container div#content {
+	padding: 15px;
+}
