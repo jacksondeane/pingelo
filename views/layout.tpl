@@ -19,26 +19,15 @@ var controller_action = '<?= Paraglide::$action ?>';
 </head>
 
 <body>
-<br />
-<?= $PAGE_CONTENT ?>
-<br />
-<br />
 <div class="navbar navbar-fixed-top">
 	<div class="navbar-inner">
-		<div class="container-fluid">
-			<a class="brand" href="#">Pingelo</a>
-			<div class="btn-group pull-right">
-				<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-					<i class="icon-user"></i> Username
-					<span class="caret"></span>
-				</a>
-				<ul class="dropdown-menu">
-					<li><a href="#">Profile</a></li>
-	              	<li class="divider"></li>
-	              	<li><a href="#">Sign Out</a></li>
-	            </ul>
-			</div>
-			
+		<div class="container">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+			</a>
+			<a class="brand" href="#">pingelo</a>
 			<div class="nav-collapse">
 				<ul class="nav">
 					<li class="active"><a href="#">Home</a></li>
@@ -46,52 +35,14 @@ var controller_action = '<?= Paraglide::$action ?>';
 					<li><a href="#contact">Results</a></li>
 					<li><a href="#contact">About</a></li>
 				</ul>
-	          </div><!--/.nav-collapse -->
-	        </div>
-	      </div>
-	    </div>
+			</div><!--/.nav-collapse -->
+		</div>
+	</div>
+</div>
+<br /><br /><br />
+<div class="container">
+	<?= $PAGE_CONTENT ?>
+</div>
 
-		<div class="container-fluid">
-			<div class="row-fluid">
-				
-				
-				<div class="span8">
-					<div class="well">
-						<div style="float:left;">
-							<div style="float:left; margin-right:10px">
-								<span style="float:left" class="label label-info">#1</span><br /><br />
-								
-							</div>
-							
-							<div style="float:left; margin-right:10px">
-								<img src="http://placehold.it/60x60" alt="">
-							</div>
-							
-							<div style="float:left; margin-right:10px">
-								<span><a href="#">@jacksondeane</a></span><br />
-								<p><span style="float:left" class="label">Default</span>(100 games)</p>
-							</div>
-						</div>
-	          		</div>
-	
-					
-				</div><!--/span-->
-				
-				<div class="span4">
-					<div class="well sidebar-nav">
-						<ul>
-							<li>1</li>
-							<li>2</li>
-							<li>3</li>
-						</ul>
-					</div><!--/.well -->
-				</div><!--/span-->
-	      </div><!--/row-->
-	      <hr>
-	      <footer>
-	        <p>&copy; Company 2012</p>
-	      </footer>
-
-	    </div><!--/.fluid-container-->
 </body>
 </html>

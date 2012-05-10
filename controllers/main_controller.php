@@ -1,4 +1,6 @@
 <?php
+require_once APP_PATH . 'lib/helpers/EloRating.php';
+
 class MainController {
 	private $_user;
 	
@@ -14,6 +16,19 @@ class MainController {
 			Web::redirect('account');
 		}
 		*/
-		Web::render_view('main/index');
+		//Web::render_view('main/index');
+		
+		$leaders = User::get_leaders();
+		
+		$elo_rating = new Rating(116, 84, 1, 0);
+		$new_ratings = $elo_rating->getNewRatings();
+		
+		Paraglide::render_view('main/index', array(
+			//'breadcrumbs' => $this->_breadcrumbs,
+			//'tabs' => $this->_tabs,
+			//'title' => 'Admin Login',
+			'leaders' => $leaders,
+			'new_ratings' => $new_ratings,
+		));
 	}
 }

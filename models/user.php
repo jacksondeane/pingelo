@@ -22,7 +22,7 @@ class User extends Paragon {
 		),
 	);
 	*/
-	
+	/*
 	protected static $_has_many = array(
 		'bets' => array(
 			'class' => 'Bet',
@@ -31,7 +31,7 @@ class User extends Paragon {
 		'emails' => 'UserEmail',
 		'transactions' => 'Transaction',
 	);
-
+*/
 /*	
 	protected static $_has_one = array(
 		'facebook_user' => 'FacebookUser',
@@ -64,13 +64,20 @@ class User extends Paragon {
 	public $date_created;
 	public $date_updated;
 	
-	public $elo_rank = 0;
+	public $elo_rank = 2000;
 	public $twitter_username;
 	public $profile_image_url;
 	
 	public $num_games;
 	public $num_wins;
-	public $num_losses;
+	
+	public static function get_leaders() {
+		$leaders = self::find(array(
+			'order' => 'elo_rank',
+		));
+		
+		return $leaders;
+	}
 	
 	private static function _base_convert($numstring, $frombase, $tobase) {
 		$chars = '0123456789abcdefghijklmnopqrstuvwxyz';
