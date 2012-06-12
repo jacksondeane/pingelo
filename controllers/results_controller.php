@@ -29,6 +29,7 @@ class ResultsController {
 		$new_ratings = null;
 		$winning_user = null;
 		$losing_user = null;
+		$error_msg = null;
 
 		if (!empty($_POST)) {
 			error_log("IN POST");
@@ -41,8 +42,11 @@ class ResultsController {
 
 				$winner_id = $_POST['post_winner_id'];
 				$loser_id = $_POST['post_loser_id'];
-				error_log($winner_id);
-				error_log($loser_id);
+				
+				if (empty($winner_id) || empty($loser_id)) {
+					$error_msg = @"MUST ENTER 2 PLAYERS";
+					return;
+				}
 
 				if ($winner_id == $loser_id) {
 					$error_msg = @"CAN NOT HAVE A RESULT AGAINST YOURSELF";
@@ -96,13 +100,6 @@ class ResultsController {
 						$winning_user->num_games++;
 
 						$losing_user->elo_rank = $new_ratings['b'];
-
-						if ($losing_user->num_wins >= 1)  {
-							$losing_user->num_wins -= 1;	
-						} else {
-							$losing_user->num_wins = 0;
-						}
-
 						$losing_user->num_games++;
 
 
@@ -123,6 +120,7 @@ class ResultsController {
 			'new_ratings' => $new_ratings,
 			'losing_user' => $losing_user,
 			'winning_user' => $winning_user,
+			'error_msg' => $error_msg,
 		));
 	}
 }

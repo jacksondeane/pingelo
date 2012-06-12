@@ -1,5 +1,6 @@
 <?php
 require_once APP_PATH . 'lib/helpers/EloRating.php';
+require_once APP_PATH . 'models/result.php';
 
 class MainController {
 	private $_user;
@@ -19,7 +20,7 @@ class MainController {
 		//Web::render_view('main/index');
 		
 		$leaders = User::get_leaders();
-		
+		$last_20_results = Result::top(20);
 		
 		
 		Paraglide::render_view('main/index', array(
@@ -27,6 +28,7 @@ class MainController {
 			//'tabs' => $this->_tabs,
 			//'title' => 'Admin Login',
 			'leaders' => $leaders,
+			'last_20_results' => $last_20_results,
 		));
 	}
 }

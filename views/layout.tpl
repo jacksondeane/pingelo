@@ -32,7 +32,7 @@ var controller_action = '<?= Paraglide::$action ?>';
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
 		          </a>			
-		          <a class="brand" href="#">pingelo</a>
+		          <a class="brand" href="<?= Paraglide::url('', '') ?>">pingelo</a>
 		          <div class="btn-group pull-right">
 		            <a class="btn dropdown-toggle" data-toggle="dropdown" href="<?= Paraglide::url('results', 'add') ?>">
 		              <i class="icon-plus-sign"></i> Add Game

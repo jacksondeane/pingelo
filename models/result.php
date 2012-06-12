@@ -45,4 +45,10 @@ class Result extends Paragon {
 	public $date_created;
 	public $date_updated;
 	
+	public static function top($limit = null) {
+		return self::find(array(
+			'order' => '-date_updated',
+			'limit' => $limit,
+		));
+	}
 }
