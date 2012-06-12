@@ -11,11 +11,7 @@
 				</div>
 				<?php $i++; ?>
 			<?php endforeach; ?>
-			<br />
-			<br />
-			<br />
-			<?= $new_ratings['a'] ?><br />
-			<?= $new_ratings['b'] ?>
+			
 		</div>
 	</div>
 	<div class="span4">

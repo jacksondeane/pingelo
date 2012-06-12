@@ -20,15 +20,13 @@ class MainController {
 		
 		$leaders = User::get_leaders();
 		
-		$elo_rating = new Rating(116, 84, 1, 0);
-		$new_ratings = $elo_rating->getNewRatings();
+		
 		
 		Paraglide::render_view('main/index', array(
 			//'breadcrumbs' => $this->_breadcrumbs,
 			//'tabs' => $this->_tabs,
 			//'title' => 'Admin Login',
 			'leaders' => $leaders,
-			'new_ratings' => $new_ratings,
 		));
 	}
 }

@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="<?= SITE_ROOT ?>css/bootstrap-responsive.min.css" />
 
 <script type="text/javascript" src="<?= SITE_ROOT ?>js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?= SITE_ROOT ?>scripts/jquery.js"></script>
 
 <script type="text/javascript">
 var base_url = '<?= SITE_URL ?>';
@@ -15,6 +16,10 @@ var controller_action = '<?= Paraglide::$action ?>';
 </script>
 
 <script type="text/javascript" src="<?= SITE_ROOT ?>scripts/main.js"></script>
+
+<?php if (file_exists(APP_PATH . 'public/scripts/helpers/' . Paraglide::$controller . '.js')): ?>
+	<script type="text/javascript" src="<?= SITE_ROOT ?>scripts/helpers/<?= Paraglide::$controller ?>.js"></script>
+<?php endif; ?>
 
 </head>
 

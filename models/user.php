@@ -64,7 +64,7 @@ class User extends Paragon {
 	public $date_created;
 	public $date_updated;
 	
-	public $elo_rank = 2000;
+	public $elo_rank = 1000;
 	public $twitter_username;
 	public $profile_image_url;
 	
@@ -73,7 +73,7 @@ class User extends Paragon {
 	
 	public static function get_leaders() {
 		$leaders = self::find(array(
-			'order' => 'elo_rank',
+			'order' => '-elo_rank',
 		));
 		
 		return $leaders;
@@ -200,6 +200,13 @@ class User extends Paragon {
 			'conditions' => array('username' => $username)
 		));
 	}
+
+	public static function find_by_twitter_username($twitter_username) {
+		return User::find_one(array(
+			'conditions' => array('twitter_username' => $twitter_username)
+		));
+	}
+
 	
 	public static function find_by_verification_code($verification_code) {
 		$data = self::_verification_code_data($verification_code);

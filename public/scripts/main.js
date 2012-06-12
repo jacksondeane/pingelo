@@ -1,4 +1,5 @@
 $(function() {
+	/*
 	FB.init({
 		appId: facebook_app_id
 		,status: true
@@ -9,6 +10,7 @@ $(function() {
 	Shadowbox.init({
 		skipSetup: true
 	});
+*/
 });
 
 var facebook_connect_onlogin = function(return_url) {
