@@ -2,7 +2,7 @@
 require_once APP_PATH . 'lib/helpers/EloRating.php';
 require_once APP_PATH . 'models/result.php';
 
-class ResultsController {
+class UsersController {
 	private $_user;
 	
 	public $models = array('User');
@@ -11,18 +11,32 @@ class ResultsController {
 		//$this->_user = User::logged_in_user();
 	}
 
-	public function index() {
+	public function index($username = null) {
+
+		$user = User::find_by_twitter_username($username);
 		$leaders = User::get_leaders();
 		
 		$elo_rating = new Rating(116, 84, 1, 0);
 		$new_ratings = $elo_rating->getNewRatings();
 		
-		Paraglide::render_view('results/index', array(
+		Paraglide::render_view('users/index', array(
 			'leaders' => $leaders,
 			'new_ratings' => $new_ratings,
+			'user' => $user,
 		));
 	}
 	
+	public function view($username = null) {
+		
+		$user = User::find_by_twitter_username($username);
+
+		$user_results = Result::find
+
+		Paraglide::render_view('users/view', array(
+			'user' => $user,
+		));
+	}
+
 	public function add() {
 		error_log("IN ADD");
 

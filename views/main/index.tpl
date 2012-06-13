@@ -2,18 +2,36 @@
 	<div class="span8">
 		<div class="well">
 			<h2>Leaders:</h2>
-			<?php $i = 1; ?>
-			<?php foreach ($leaders as $leader): ?>
-				<div>
-					#<?= $i ?>
-					<?= $leader->elo_rank ?>
-					<?= $leader->twitter_username ?>
-					<?php $losses = $leader->num_games - $leader->num_wins; ?>
-					(<?= $leader->num_wins ?> - <?= $losses ?>)
-				</div>
-				<?php $i++; ?>
-			<?php endforeach; ?>
-			
+
+
+			<table class="table table-striped table-condensed">
+				<tbody>
+					<?php $i = 1; ?>
+					<?php foreach ($leaders as $leader): ?>
+						<tr>
+						   	<td>
+						   		#<?= $i ?>
+						   	</td>
+
+						   	<td>
+						   		<?= $leader->elo_rank ?>
+						   	</td>
+
+							<td>
+								<a href="#" class="thumbnail" style="width:73px; height:73px" >
+		      						<img src="https://api.twitter.com/1/users/profile_image?screen_name=<?= $leader->twitter_username ?>&size=bigger" alt="">
+		    					</a>
+							</td>
+							<td>
+								<?= $leader->twitter_username ?>
+							<?php $losses = $leader->num_games - $leader->num_wins; ?>
+							(<?= $leader->num_wins ?> - <?= $losses ?>)
+							</td>
+						</tr>
+						<?php $i++; ?>
+					<?php endforeach; ?>
+				</tbody>
+			</table>
 		</div>
 	</div>
 	<div class="span4">

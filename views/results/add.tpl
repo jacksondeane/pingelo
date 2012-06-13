@@ -16,26 +16,28 @@
 			</div>
 			<?php endif; ?>
 			
-			<div style="display: none" class="alert alert-info">INFO</div>
+			
 
 			<div>
 				<form method="post" name="add_result" action="<?= Paraglide::url('results', 'add') ?>">
 				<table>
 					<tr>
-						<td id="winner_container" style="width:150px; text-align:left; font-size:18px" ><strong>-</strong></td>
+						<td id="winner_container" class="btn btn-success disabled" style="width:120px; text-align:left; font-size:18px" ><strong>-</strong></td>
 						<input type="hidden" id="post_winner_id" name="post_winner_id" value="" />
 						<td style="width:100px; text-align:center">def.</td>
-						<td id="loser_container" style="width:150px; text-align:left; font-size:18px"><strong>-</strong></td>
+						<td id="loser_container" class="btn btn-danger disabled" style="width:120px; text-align:left; font-size:18px"><strong>-</strong></td>
 						<input type="hidden" id="post_loser_id" name="post_loser_id" value="" />
+
+						
 						<td>
-							<button id="add_result_submit" class="btn btn-primary btn-large" name="add_result_submit" type="submit" value=""><i class="icon-plus icon-white"></i>Add Result</button>
+							<button id="add_result_submit" class="btn btn-primary btn-small" name="add_result_submit" type="submit" value="">Add Result</button>
 						</td>
+					</tr>
 					</tr>
 				</table>
 				</form>
 			</div>
-			<br />
-			<br />
+			
 			<div style="float:left; width:400px;">
 				<div style="width:150px; text-align:left; float:left">
 					<?php foreach ($users as $u => $user): ?>
@@ -55,9 +57,29 @@
 	
 	<div class="span4">
 		<div class="well">
+
+			<?php if (!empty($add_error_msg)): ?>
+			<div class="alert alert-error">
+				<?= $add_error_msg ?>
+			</div>
+			<?php endif; ?>
+
+			<?php if (!empty($add_success_msg)): ?>
+			<div class="alert alert-success">
+				<?= $add_success_msg ?>
+			</div>
+			<?php endif; ?>
+
+			
+
 			<form method="post" name="add_player" action="<?= Paraglide::url('results', 'add_player') ?>">
-				<label for="">Add a Player: (twitter handle)</label><input type="text" name="new_player_twitter_username" />
-				<button id="add_player_submit" class="btn btn-primary btn-large" name="add_player_submit" type="submit" value=""><i class="icon-plus icon-white"></i>Add Player</button>
+
+				<label for="">Add a Player: (twitter handle)</label>
+				<div class="input-prepend">
+                	<span class="add-on">@</span><input class="span2" name="new_player_twitter_username" id="prependedInput" size="16" type="text">
+              	</div>
+
+				<button id="add_player_submit" class="btn btn-primary btn-small" name="add_player_submit" type="submit" value="">Add Player</button>
 			</form>
 		</div>
 	</div>
