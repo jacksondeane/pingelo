@@ -4,7 +4,7 @@ require_once APP_PATH . 'lib/apis/google/contrib/apiOauth2Service.php';
 require_once APP_PATH . 'lib/helpers/EloRating.php';
 require_once APP_PATH . 'models/result.php';
 
-class ResultsController {
+class oauth2callbackController {
 	private $_user;
 	
 	public $models = array('User');

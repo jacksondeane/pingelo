@@ -23,7 +23,7 @@
 		    					</a>
 							</td>
 							<td>
-								<?= $leader->twitter_username ?>
+								<a href="<?= Paraglide::url('users', null, $leader->twitter_username) ?>" ><?= $leader->twitter_username ?></a>
 							<?php $losses = $leader->num_games - $leader->num_wins; ?>
 							(<?= $leader->num_wins ?> - <?= $losses ?>)
 							</td>
@@ -40,7 +40,14 @@
 			<?php foreach ($last_20_results as $result): ?>
 				<?php $winner_change = $result->winner_rank_after - $result->winner_rank_before;  ?>
 				<?php $loser_change = $result->loser_rank_before - $result->loser_rank_after;  ?>
-				<div><?= $result->winner_user->twitter_username ?> (+<?= $winner_change ?>)  def.  <?= $result->loser_user->twitter_username ?> (-<?= $loser_change ?>)</div>
+
+				<div>
+					<span class="label label-success">+<?= $winner_change ?></span>
+					<a href="<?= Paraglide::url('users', null, $result->winner_user->twitter_username) ?>" ><?= $result->winner_user->twitter_username ?></a>
+					
+					   <em>def.</em>  <a href="<?= Paraglide::url('users', null, $result->loser_user->twitter_username) ?>" ><?= $result->loser_user->twitter_username ?></a> 
+
+				</div>
 			<?php endforeach; ?>
 		</div>
 	</div>

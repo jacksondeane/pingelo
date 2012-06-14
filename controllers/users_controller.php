@@ -30,7 +30,7 @@ class UsersController {
 		
 		$user = User::find_by_twitter_username($username);
 
-		$user_results = Result::find
+		//$user_results = Result::find
 
 		Paraglide::render_view('users/view', array(
 			'user' => $user,
