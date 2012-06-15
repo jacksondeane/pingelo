@@ -34,10 +34,20 @@ var controller_action = '<?= Paraglide::$action ?>';
           </a>			
           <a class="brand" href="<?= Paraglide::url('', '') ?>">pingelo</a>
           <div class="btn-group pull-right">
-            <a class="btn dropdown-toggle" data-toggle="dropdown" href="<?= Paraglide::url('results', 'add') ?>">
-              <i class="icon-plus-sign"></i> Add Game
-              <span class="caret"></span>
-            </a>
+            
+            <?php if(!empty($authUrl)): ?>
+              <a class="btn dropdown-toggle" data-toggle="dropdown" href="<?= $authUrl ?>">
+                <i class="icon-user"></i>Login
+                
+              </a>
+            <?php else: ?>
+              <a class="btn dropdown-toggle" data-toggle="dropdown" href="<?= Paraglide::url('results', 'add') ?>">
+                <i class="icon-plus-sign"></i> Add Game
+                
+              </a>
+            <?php endif; ?>
+
+
             <ul class="dropdown-menu">
               <li><a href="#">Profile</a></li>
               <li class="divider"></li>
