@@ -37,7 +37,7 @@ var controller_action = '<?= Paraglide::$action ?>';
             
             <?php if(!empty($authUrl)): ?>
               <a class="btn dropdown-toggle" data-toggle="dropdown" href="<?= $authUrl ?>">
-                <i class="icon-user"></i>Login
+                <i class="icon-user"></i>Login with Google Apps
                 
               </a>
             <?php else: ?>
