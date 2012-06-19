@@ -4,7 +4,7 @@ require_once APP_PATH . 'lib/apis/google/contrib/apiOauth2Service.php';
 require_once APP_PATH . 'lib/helpers/EloRating.php';
 require_once APP_PATH . 'models/result.php';
 
-class oauth2callbackController {
+class Oauth2callbackController {
 	private $_user;
 	
 	public $models = array('User');
@@ -33,6 +33,7 @@ class oauth2callbackController {
 
 		if (isset($_GET['code'])) {
 			error_log('authenticate');
+
 		  	$client->authenticate();
 
 		  	$_SESSION['token'] = $client->getAccessToken();
@@ -69,8 +70,23 @@ class oauth2callbackController {
 		  	$authUrl = $client->createAuthUrl();
 		}
 
-		Paraglide::render_view('results/add', array(
-			'auth_url' => $authUrl,
+		Paraglide::render_view('main/index', array(
+			//'breadcrumbs' => $this->_breadcrumbs,
+			//'tabs' => $this->_tabs,
+			//'title' => 'Admin Login',
 		));
+
 	}
+
+	public function view() {
+		error_log('oauth2callbackController->view');
+
+		Paraglide::render_view('main/index', array(
+			//'breadcrumbs' => $this->_breadcrumbs,
+			//'tabs' => $this->_tabs,
+			//'title' => 'Admin Login',
+		));
+
+	}
+
 }
