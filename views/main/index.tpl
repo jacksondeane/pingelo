@@ -1,3 +1,5 @@
+<? phpinfo(); ?>
+
 <div class="row">
 	<div class="span8">
 		<div class="well">
