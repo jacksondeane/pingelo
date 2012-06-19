@@ -43,8 +43,8 @@ var controller_action = '<?= Paraglide::$action ?>';
             <?php else: ?>
               <a class="btn dropdown-toggle" data-toggle="dropdown" href="<?= Paraglide::url('results', 'add') ?>">
                 <i class="icon-plus-sign"></i> Add Game
-                
               </a>
+
             <?php endif; ?>
 
 
