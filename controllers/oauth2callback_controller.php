@@ -15,7 +15,6 @@ class Oauth2callbackController {
 
 	public function index() {
 
-
 		error_log('oauth2callbackController->index');
 
 		session_start();
@@ -31,6 +30,31 @@ class Oauth2callbackController {
 
 		$oauth2 = new apiOauth2Service($client);
 
+
+		if (isset($_GET['code'])) {
+
+
+			if ($client->getAccessToken()) {
+			error_log('getAccessToken');
+		  	$user = $oauth2->userinfo->get();
+
+		  	// These fields are currently filtered through the PHP sanitize filters.
+		  	// See http://www.php.net/manual/en/filter.filters.sanitize.php
+		  	
+		  	$email = filter_var($user['email'], FILTER_SANITIZE_EMAIL);
+		  	$img = filter_var($user['picture'], FILTER_VALIDATE_URL);
+		  	$personMarkup = "$email<div><img src='$img?sz=50'></div>";
+
+		  	// The access token may have been updated lazily.
+		  	$_SESSION['token'] = $client->getAccessToken();
+			} else {
+				error_log('createAuthUrl');
+			  	$authUrl = $client->createAuthUrl();
+			}
+		}
+
+
+		/*
 		if (isset($_GET['code'])) {
 			error_log('authenticate');
 
@@ -69,11 +93,15 @@ class Oauth2callbackController {
 			error_log('createAuthUrl');
 		  	$authUrl = $client->createAuthUrl();
 		}
+		*/
 
 		Paraglide::render_view('main/index', array(
 			//'breadcrumbs' => $this->_breadcrumbs,
 			//'tabs' => $this->_tabs,
 			//'title' => 'Admin Login',
+			'email' => $email,
+			'img' => $img,
+			'personMarkup' => $personMarkup,
 		));
 
 	}

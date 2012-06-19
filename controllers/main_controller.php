@@ -63,6 +63,7 @@ class MainController {
 		  	// See http://www.php.net/manual/en/filter.filters.sanitize.php
 		  	$email = filter_var($user['email'], FILTER_SANITIZE_EMAIL);
 		  	$img = filter_var($user['picture'], FILTER_VALIDATE_URL);
+		  	
 		  	$personMarkup = "$email<div><img src='$img?sz=50'></div>";
 
 		  	// The access token may have been updated lazily.
@@ -84,7 +85,10 @@ class MainController {
 			//'title' => 'Admin Login',
 			'leaders' => $leaders,
 			'last_20_results' => $last_20_results,
-			'authUrl' => $authUrl
+			'authUrl' => $authUrl,
+			'email' => $email,
+			'img' => $img,
+			'personMarkup' => $personMarkup,
 		));
 	}
 }
