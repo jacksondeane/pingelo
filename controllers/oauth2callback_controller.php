@@ -14,6 +14,10 @@ class oauth2callbackController {
 	}
 
 	public function index() {
+
+
+		error_log('oauth2callbackController->index');
+
 		session_start();
 		$client = new apiClient();
 		$client->setApplicationName("Pingelo");
