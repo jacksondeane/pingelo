@@ -34,6 +34,7 @@ class ResultsController {
 
 		if (!empty($_POST)) {
 			error_log("IN POST");
+
 			if (isset($_POST['post_winner_id']) && $_POST['post_loser_id']) {
 				error_log("CREATE RESULT");
 
@@ -41,8 +42,8 @@ class ResultsController {
 				
 				//CREATE NEW RESULT
 
-				$winner_id = $_POST['post_winner_id'];
-				$loser_id = $_POST['post_loser_id'];
+				$winner_id = trim($_POST['post_winner_id']);
+				$loser_id = trim($_POST['post_loser_id']);
 				
 				if (empty($winner_id) || empty($loser_id)) {
 					$error_msg = @"MUST ENTER 2 PLAYERS";
