@@ -46,9 +46,9 @@ var controller_action = '<?= Paraglide::$action ?>';
                 <a class="btn btn-success" href="<?= Paraglide::url('results', 'add') ?>">
                   <i class="icon-plus-sign icon-white"></i> Add New Result
                 </a>
-
+                <?php $email =  $_SESSION['email']; ?>
                 <a class="btn" href="<?= Paraglide::url('main', 'logout') ?>">
-                <i class="icon-user"></i> Logout: <?= $_SESSION['email'] ?>
+                <i class="icon-user"></i> Logout: <?= $email ?>
                 </a>
               </div>
 
