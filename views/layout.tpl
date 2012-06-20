@@ -48,7 +48,7 @@ var controller_action = '<?= Paraglide::$action ?>';
                 </a>
 
                 <a class="btn" href="<?= Paraglide::url('main', 'logout') ?>">
-                <i class="icon-user"></i> Logout: <?= $email ?>
+                <i class="icon-user"></i> Logout: <?= $_SESSION['email'] ?>
                 </a>
               </div>
 

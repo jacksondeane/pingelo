@@ -17,7 +17,7 @@ class MainController {
 		
 		$authUrl = null;
 		$email = null;
-		
+
 		session_start();
 		$client = new apiClient();
 		$client->setApplicationName("Pingelo");
@@ -55,7 +55,8 @@ class MainController {
 		  	// See http://www.php.net/manual/en/filter.filters.sanitize.php
 		  	$email = filter_var($user['email'], FILTER_SANITIZE_EMAIL);
 		  	$img = filter_var($user['picture'], FILTER_VALIDATE_URL);
-		  	
+		  	$_SESSION['email'] = $email;
+
 		  	//$personMarkup = "$email<div><img src='$img?sz=50'></div>";
 
 		  	// The access token may have been updated lazily.
