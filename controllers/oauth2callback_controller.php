@@ -35,22 +35,25 @@ class Oauth2callbackController {
 
 
 			if ($client->getAccessToken()) {
-			error_log('getAccessToken');
-		  	$user = $oauth2->userinfo->get();
+				error_log('getAccessToken');
+		  		$user = $oauth2->userinfo->get();
 
 		  	// These fields are currently filtered through the PHP sanitize filters.
 		  	// See http://www.php.net/manual/en/filter.filters.sanitize.php
 		  	
-		  	$email = filter_var($user['email'], FILTER_SANITIZE_EMAIL);
-		  	$img = filter_var($user['picture'], FILTER_VALIDATE_URL);
-		  	$personMarkup = "$email<div><img src='$img?sz=50'></div>";
+		  	//$email = filter_var($user['email'], FILTER_SANITIZE_EMAIL);
+		  	//$img = filter_var($user['picture'], FILTER_VALIDATE_URL);
+		  	//$personMarkup = "$email<div><img src='$img?sz=50'></div>";
 
-		  	// The access token may have been updated lazily.
-		  	$_SESSION['token'] = $client->getAccessToken();
-			} else {
-				error_log('createAuthUrl');
-			  	$authUrl = $client->createAuthUrl();
-			}
+		  		// The access token may have been updated lazily.
+		  		$_SESSION['token'] = $client->getAccessToken();
+
+			} 
+
+			//else {
+			//	error_log('createAuthUrl');
+			//  	$authUrl = $client->createAuthUrl();
+			//}
 		}
 
 
@@ -99,9 +102,9 @@ class Oauth2callbackController {
 			//'breadcrumbs' => $this->_breadcrumbs,
 			//'tabs' => $this->_tabs,
 			//'title' => 'Admin Login',
-			'email' => $email,
-			'img' => $img,
-			'personMarkup' => $personMarkup,
+			//'email' => $email,
+			//'img' => $img,
+			//'personMarkup' => $personMarkup,
 		));
 
 	}
