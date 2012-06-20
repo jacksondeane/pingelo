@@ -77,6 +77,8 @@ class MainController {
 		} else {
 			error_log('no [token]');
 		}
+		
+		$authUrl = $client->createAuthUrl();
 
 		$leaders = User::get_leaders();
 		$last_20_results = Result::top(20);
