@@ -42,13 +42,13 @@ var controller_action = '<?= Paraglide::$action ?>';
               </a>
 
             <?php else: ?>
-              
+            <div class="btn-group">
               <a class="btn btn-success" href="<?= Paraglide::url('results', 'add') ?>">
-                <i class="icon-plus-sign"></i> Add Game
+                <i class="icon-plus-sign icon-white"></i> Add Game
               </a>
 
               <a class="btn-small btn-inverse" href="<?= Paraglide::url('main', 'logout') ?>">Logout <?= $email ?></a>
-
+            </div>
             <?php endif; ?>
 
           </div>
