@@ -35,7 +35,7 @@ var controller_action = '<?= Paraglide::$action ?>';
           <a class="brand" href="<?= Paraglide::url('', '') ?>">pingelo</a>
           
             
-            <?php if(!empty($authUrl)): ?>
+            <?php if(!empty($email)): ?>
               <div class="btn-group pull-right">
                 <a class="btn btn-primary" href="<?= $authUrl ?>">
                   <i class="icon-user icon-white"></i> Login with Google Apps    
@@ -46,7 +46,7 @@ var controller_action = '<?= Paraglide::$action ?>';
                 <a class="btn btn-success" href="<?= Paraglide::url('results', 'add') ?>">
                   <i class="icon-plus-sign icon-white"></i> Add New Result
                 </a>
-                <?php $email =  $_SESSION['email']; ?>
+
                 <a class="btn" href="<?= Paraglide::url('main', 'logout') ?>">
                 <i class="icon-user"></i> Logout: <?= $email ?>
                 </a>

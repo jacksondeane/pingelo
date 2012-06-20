@@ -43,24 +43,27 @@ class MainController {
 		}
 
 		if (isset($_SESSION['token'])) {
+			
 			error_log('HAVE TOKEN');
+
 		 	$client->setAccessToken($_SESSION['token']);
+
+		 	$user = $oauth2->userinfo->get();
+		  	$email = filter_var($user['email'], FILTER_SANITIZE_EMAIL);
+		  	$img = filter_var($user['picture'], FILTER_VALIDATE_URL);
 		}
 
 		if ($client->getAccessToken()) {
-			error_log('getAccessToken');
-		  	$user = $oauth2->userinfo->get();
 
-		  	// These fields are currently filtered through the PHP sanitize filters.
-		  	// See http://www.php.net/manual/en/filter.filters.sanitize.php
+			error_log('getAccessToken');
+
+		  	$user = $oauth2->userinfo->get();
 		  	$email = filter_var($user['email'], FILTER_SANITIZE_EMAIL);
 		  	$img = filter_var($user['picture'], FILTER_VALIDATE_URL);
-		  	$_SESSION['email'] = $email;
-
-		  	//$personMarkup = "$email<div><img src='$img?sz=50'></div>";
 
 		  	// The access token may have been updated lazily.
-		  	$_SESSION['token'] = $client->getAccessToken();
+		  	_SESSION['token'] = $client->getAccessToken();
+
 		} else {
 			error_log('createAuthUrl');
 		  	$authUrl = $client->createAuthUrl();
@@ -73,9 +76,6 @@ class MainController {
 		
 		
 		Paraglide::render_view('main/index', array(
-			//'breadcrumbs' => $this->_breadcrumbs,
-			//'tabs' => $this->_tabs,
-			//'title' => 'Admin Login',
 			'leaders' => $leaders,
 			'last_20_results' => $last_20_results,
 			'authUrl' => $authUrl,
