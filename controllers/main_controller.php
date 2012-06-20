@@ -16,7 +16,7 @@ class MainController {
 	public function index() {
 		error_log('MainController->index');
 		$authUrl = null;
-		$email;
+		$email = null;
 
 		session_start();
 		$client = new apiClient();

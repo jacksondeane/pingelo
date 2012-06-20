@@ -32,6 +32,8 @@ class Oauth2callbackController {
 
 
 		if (isset($_GET['code'])) {
+			error_log('Oauth2callbackController -> have [code]');
+
 			if ($client->getAccessToken()) {
 
 				error_log('Oauth2callbackController -> getAccessToken');
@@ -48,12 +50,13 @@ class Oauth2callbackController {
 		  		error_log('Oauth2callbackController -> setting session token');
 		  		$_SESSION['token'] = $client->getAccessToken();
 
-			} 
-
-			//else {
-			//	error_log('createAuthUrl');
-			//  	$authUrl = $client->createAuthUrl();
-			//}
+			} else {
+				error_log('FAIL -> getAccessToken');
+				//	error_log('createAuthUrl');
+				//  	$authUrl = $client->createAuthUrl();
+			}
+		} else {
+			error_log('Oauth2callbackController -> no [code]');
 		}
 
 
@@ -97,8 +100,8 @@ class Oauth2callbackController {
 		  	$authUrl = $client->createAuthUrl();
 		}
 		*/
-		
-		Paraglide::redirect('main', 'index');
+		error_log('Oauth2callbackController->redirecting to main');
+		Paraglide::redirect('main');
 
 		/*
 		Paraglide::render_view('main/index', array(
