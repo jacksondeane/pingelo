@@ -97,7 +97,10 @@ class Oauth2callbackController {
 		  	$authUrl = $client->createAuthUrl();
 		}
 		*/
+		
+		Paraglide::redirect('main', 'index');
 
+		/*
 		Paraglide::render_view('main/index', array(
 			//'breadcrumbs' => $this->_breadcrumbs,
 			//'tabs' => $this->_tabs,
@@ -106,7 +109,7 @@ class Oauth2callbackController {
 			//'img' => $img,
 			//'personMarkup' => $personMarkup,
 		));
-
+		*/
 	}
 
 }
