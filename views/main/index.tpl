@@ -1,6 +1,5 @@
 <div class="row">
 	<div class="span8">
-		<?= $personMarkup ?>
 	<?= $email ?>
 	<?= $img ?>
 	

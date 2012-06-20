@@ -36,11 +36,13 @@ var controller_action = '<?= Paraglide::$action ?>';
           <div class="btn-group pull-right">
             
             <?php if(!empty($authUrl)): ?>
+              
               <a class="btn dropdown-toggle" data-toggle="dropdown" href="<?= $authUrl ?>">
-                <i class="icon-user"></i>Login with Google Apps
-                
+                <i class="icon-user"></i>Login with Google Apps    
               </a>
+
             <?php else: ?>
+              Logged in as <strong><?= $email ?></strong>
               <a class="btn dropdown-toggle" data-toggle="dropdown" href="<?= Paraglide::url('results', 'add') ?>">
                 <i class="icon-plus-sign"></i> Add Game
               </a>
@@ -53,7 +55,9 @@ var controller_action = '<?= Paraglide::$action ?>';
               <li class="divider"></li>
               <li><a href="#">Sign Out</a></li>
             </ul>
+
           </div>
+
           <div class="nav-collapse">
             <ul class="nav">
             	<li	class="<?= (Paraglide::$controller == 'main') ? 'active' : '' ?>"><a href="<?= Paraglide::url(null) ?>">Home</a></li>

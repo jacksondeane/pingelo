@@ -14,12 +14,8 @@ class MainController {
 	}
 
 	public function index() {
-		/*
-		if (!empty($this->_user)) {
-			Web::redirect('account');
-		}
-		*/
-		//Web::render_view('main/index');
+		
+		$authUrl;
 		
 		session_start();
 		$client = new apiClient();
@@ -64,7 +60,7 @@ class MainController {
 		  	$email = filter_var($user['email'], FILTER_SANITIZE_EMAIL);
 		  	$img = filter_var($user['picture'], FILTER_VALIDATE_URL);
 		  	
-		  	$personMarkup = "$email<div><img src='$img?sz=50'></div>";
+		  	//$personMarkup = "$email<div><img src='$img?sz=50'></div>";
 
 		  	// The access token may have been updated lazily.
 		  	$_SESSION['token'] = $client->getAccessToken();
