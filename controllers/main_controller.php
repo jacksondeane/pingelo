@@ -81,7 +81,7 @@ class MainController {
 		$leaders = User::get_leaders();
 		$last_20_results = Result::top(20);
 		
-		session_destroy();
+		//session_destroy();
 		
 		Paraglide::render_view('main/index', array(
 			'leaders' => $leaders,
