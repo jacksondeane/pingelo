@@ -33,10 +33,13 @@ class Oauth2callbackController {
 
 		if (isset($_GET['code'])) {
 			error_log('Oauth2callbackController -> have [code]');
+			
 			error_log('Oauth2callbackController -> authenticate');
 		  	$client->authenticate();
+		  	
 		  	error_log('Oauth2callbackController -> setting SESSION[token]');
 		  	$_SESSION['token'] = $client->getAccessToken();
+		  	header('Location: http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']);
 
 		  	/*
 			if ($client->getAccessToken()) {

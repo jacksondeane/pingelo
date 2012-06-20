@@ -55,23 +55,27 @@ class MainController {
 		*/
 
 		if (isset($_SESSION['token'])) {
-		//if ($client->getAccessToken()) {
+			$client->setAccessToken($_SESSION['token']);
 
-			//error_log('getAccessToken');
-			error_log('MainController-> have token');
+			if ($client->getAccessToken()) {
+				//error_log('getAccessToken');
+				error_log('MainController-> have getAccessToken');
 
-		  	$user = $oauth2->userinfo->get();
-		  	$email = filter_var($user['email'], FILTER_SANITIZE_EMAIL);
-		  	$img = filter_var($user['picture'], FILTER_VALIDATE_URL);
+			  	$user = $oauth2->userinfo->get();
+			  	$email = filter_var($user['email'], FILTER_SANITIZE_EMAIL);
+			  	$img = filter_var($user['picture'], FILTER_VALIDATE_URL);
 
-		  	// The access token may have been updated lazily.
-		  	$_SESSION['token'] = $client->getAccessToken();
+			  	// The access token may have been updated lazily.
+			  	$_SESSION['token'] = $client->getAccessToken();
 
+			} else {
+				//error_log('getAccessToken->createAuthUrl');
+			  	$authUrl = $client->createAuthUrl();
+			}
+			
 		} else {
-			error_log('getAccessToken->createAuthUrl');
-		  	$authUrl = $client->createAuthUrl();
+			error_log('no [token]');
 		}
-
 
 		$leaders = User::get_leaders();
 		$last_20_results = Result::top(20);
