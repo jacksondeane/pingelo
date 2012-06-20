@@ -35,7 +35,7 @@ var controller_action = '<?= Paraglide::$action ?>';
           <a class="brand" href="<?= Paraglide::url('', '') ?>">pingelo</a>
           
             
-            <?php if(!empty($email)): ?>
+            <?php if(empty($email)): ?>
               <div class="btn-group pull-right">
                 <a class="btn btn-primary" href="<?= $authUrl ?>">
                   <i class="icon-user icon-white"></i> Login with Google Apps    
