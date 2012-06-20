@@ -16,7 +16,7 @@ class MainController {
 	public function index() {
 		
 		$authUrl = null;
-		//$email = null;
+		$email;
 
 		session_start();
 		$client = new apiClient();
@@ -31,6 +31,7 @@ class MainController {
 
 		$oauth2 = new apiOauth2Service($client);
 
+		/*
 		if (isset($_GET['code'])) {
 			error_log('authenticate');
 		  	$client->authenticate();
@@ -41,21 +42,23 @@ class MainController {
 		  	//header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
 
 		}
-
+		*/
+		/*
 		if (isset($_SESSION['token'])) {
-			
-			error_log('HAVE TOKEN');
-
+			error_log('MainController-> have token');
 		 	$client->setAccessToken($_SESSION['token']);
 
 		 	$user = $oauth2->userinfo->get();
 		  	$email = filter_var($user['email'], FILTER_SANITIZE_EMAIL);
 		  	$img = filter_var($user['picture'], FILTER_VALIDATE_URL);
 		}
+		*/
 
-		if ($client->getAccessToken()) {
+		if (isset($_SESSION['token'])) {
+		//if ($client->getAccessToken()) {
 
-			error_log('getAccessToken');
+			//error_log('getAccessToken');
+			error_log('MainController-> have token');
 
 		  	$user = $oauth2->userinfo->get();
 		  	$email = filter_var($user['email'], FILTER_SANITIZE_EMAIL);
@@ -65,10 +68,9 @@ class MainController {
 		  	$_SESSION['token'] = $client->getAccessToken();
 
 		} else {
-			error_log('createAuthUrl');
+			error_log('getAccessToken->createAuthUrl');
 		  	$authUrl = $client->createAuthUrl();
 		}
-
 
 
 		$leaders = User::get_leaders();
