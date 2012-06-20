@@ -4,6 +4,7 @@
 			<h2>Leaders:</h2>
 			<table class="table table-striped table-condensed">
 				<tbody>
+				<?php if (!empty($leaders)): ?>
 					<?php $i = 1; ?>
 					<?php foreach ($leaders as $leader): ?>
 						<tr>
@@ -28,12 +29,14 @@
 						</tr>
 						<?php $i++; ?>
 					<?php endforeach; ?>
+				<?php endif; ?>
 				</tbody>
 			</table>
 		</div>
 	</div>
 	<div class="span4">
 		<div class="well">
+			<?php if(!empty($last_20_results)): ?>
 			<h2>Last 20:</h2>
 			<?php foreach ($last_20_results as $result): ?>
 				<?php $winner_change = $result->winner_rank_after - $result->winner_rank_before;  ?>
@@ -47,6 +50,7 @@
 
 				</div>
 			<?php endforeach; ?>
+		<?php endif; ?>
 		</div>
 	</div>
 </div>
