@@ -45,12 +45,6 @@ class MainController {
 		 	$client->setAccessToken($_SESSION['token']);
 		}
 
-		if (isset($_REQUEST['logout'])) {
-			error_log('logout');
-		  	unset($_SESSION['token']);
-		  	$client->revokeToken();
-		}
-
 		if ($client->getAccessToken()) {
 			error_log('getAccessToken');
 		  	$user = $oauth2->userinfo->get();
@@ -85,4 +79,39 @@ class MainController {
 			'email' => $email,
 		));
 	}
+
+	public function logout() {
+		
+		error_log('logout');
+		
+		session_start();
+		$client = new apiClient();
+		$client->setApplicationName("Pingelo");
+		// Visit https://code.google.com/apis/console?api=plus to generate your
+		// oauth2_client_id, oauth2_client_secret, and to register your oauth2_redirect_uri.
+
+		$client->setClientId('191654827151.apps.googleusercontent.com');
+		$client->setClientSecret('cX8eLDSE5mdFY6BXwzz1pXmn');
+		$client->setRedirectUri('https://www.pingelo.com/oauth2callback');
+		$client->setDeveloperKey('AIzaSyCOPD8gAKBEm4guY-o-TS8HOl600Zm3BHs');
+
+		$oauth2 = new apiOauth2Service($client);
+
+		unset($_SESSION['token']);
+		$client->revokeToken();
+
+
+		$authUrl = $client->createAuthUrl();
+
+		$leaders = User::get_leaders();
+		$last_20_results = Result::top(20);
+
+		Paraglide::render_view('main/index', array(
+			'leaders' => $leaders,
+			'last_20_results' => $last_20_results,
+			'authUrl' => $authUrl,
+		));
+		
+	}
+
 }
