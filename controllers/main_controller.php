@@ -15,7 +15,7 @@ class MainController {
 
 	public function index() {
 		
-		$authUrl;
+		$authUrl = null;
 		
 		session_start();
 		$client = new apiClient();
@@ -83,8 +83,6 @@ class MainController {
 			'last_20_results' => $last_20_results,
 			'authUrl' => $authUrl,
 			'email' => $email,
-			'img' => $img,
-			'personMarkup' => $personMarkup,
 		));
 	}
 }
