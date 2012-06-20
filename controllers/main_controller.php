@@ -63,16 +63,17 @@ class MainController {
 
 			  	$user = $oauth2->userinfo->get();
 			  	$email = filter_var($user['email'], FILTER_SANITIZE_EMAIL);
-			  	$img = filter_var($user['picture'], FILTER_VALIDATE_URL);
+			  	//$img = filter_var($user['picture'], FILTER_VALIDATE_URL);
 
 			  	// The access token may have been updated lazily.
 			  	$_SESSION['token'] = $client->getAccessToken();
+			  	$_SESSION['email'] = $email;
 
 			} else {
 				//error_log('getAccessToken->createAuthUrl');
 			  	$authUrl = $client->createAuthUrl();
 			}
-			
+
 		} else {
 			error_log('no [token]');
 		}
@@ -108,7 +109,6 @@ class MainController {
 
 		unset($_SESSION['token']);
 		$client->revokeToken();
-
 
 		$authUrl = $client->createAuthUrl();
 
