@@ -36,24 +36,24 @@ var controller_action = '<?= Paraglide::$action ?>';
           
             
             <?php if(!empty($authUrl)): ?>
-              <div class="btn-group pull-right">    
-              <a class="btn btn-primary" href="<?= $authUrl ?>">
-                <i class="icon-user"></i>Login with Google Apps    
-              </a>
-            </div>
+              <div class="btn-group pull-right">
+                <a class="btn btn-primary" href="<?= $authUrl ?>">
+                  <i class="icon-user icon-white"></i> Login with Google Apps    
+                </a>
+              </div>
             <?php else: ?>
-            
             <div class="btn-group pull-right">
-              
-              <a class="btn btn-success" href="<?= Paraglide::url('results', 'add') ?>">
-                <i class="icon-plus-sign icon-white"></i> Add Game
-              </a>
+                <a class="btn btn-success" href="<?= Paraglide::url('results', 'add') ?>">
+                  <i class="icon-plus-sign icon-white"></i> Add New Result
+                </a>
 
-              <a class="btn-small btn-inverse" href="<?= Paraglide::url('main', 'logout') ?>">Logout <?= $email ?></a>
+                <a class="btn" href="<?= Paraglide::url('main', 'logout') ?>">
+                <i class="icon-user"></i> Logout: <?= $email ?>
+                </a>
+              </div>
 
-            </div>
             <?php endif; ?>
-            
+
           <div class="nav-collapse">
             <ul class="nav">
             	<li	class="<?= (Paraglide::$controller == 'main') ? 'active' : '' ?>"><a href="<?= Paraglide::url(null) ?>">Home</a></li>
