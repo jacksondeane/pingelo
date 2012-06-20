@@ -14,7 +14,7 @@ class MainController {
 	}
 
 	public function index() {
-		error_log('MainController->index')
+		error_log('MainController->index');
 		$authUrl = null;
 		$email;
 
