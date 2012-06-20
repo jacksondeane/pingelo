@@ -3,14 +3,19 @@ require_once APP_PATH . 'lib/apis/google/apiClient.php';
 require_once APP_PATH . 'lib/apis/google/contrib/apiOauth2Service.php';
 require_once APP_PATH . 'lib/helpers/EloRating.php';
 require_once APP_PATH . 'models/result.php';
+require_once APP_PATH . 'models/session_helper.php';
 
 class ResultsController {
 	private $_user;
-	
+	private $_email;
+	private $_authUrl;
+
 	public $models = array('User');
 
 	public function _preprocess() {
 		//$this->_user = User::logged_in_user();
+		$this->_email = SessionHelper::get_active_user();
+		$this->_authUrl = SessionHelper::get_authUrl();
 	}
 
 	public function index() {
@@ -22,6 +27,8 @@ class ResultsController {
 		Paraglide::render_view('results/index', array(
 			'leaders' => $leaders,
 			'new_ratings' => $new_ratings,
+			'authUrl' => $this->_authUrl,
+			'email' => $this->_email,
 		));
 	}
 	
@@ -123,6 +130,8 @@ class ResultsController {
 			'losing_user' => $losing_user,
 			'winning_user' => $winning_user,
 			'error_msg' => $error_msg,
+			'authUrl' => $this->_authUrl,
+			'email' => $this->_email,
 		));
 	}
 
@@ -174,6 +183,8 @@ class ResultsController {
 			//'losing_user' => $losing_user,
 			//'winning_user' => $winning_user,
 			//'error_msg' => $error_msg,
+			'authUrl' => $this->_authUrl,
+			'email' => $this->_email,
 		));
 	}
 }
