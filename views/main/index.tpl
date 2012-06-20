@@ -1,8 +1,5 @@
 <div class="row">
 	<div class="span8">
-	<?= $email ?>
-	<?= $img ?>
-	
 		<div class="well">
 			<h2>Leaders:</h2>
 			<table class="table table-striped table-condensed">

@@ -25,7 +25,7 @@ class Oauth2callbackController {
 
 		$client->setClientId('191654827151.apps.googleusercontent.com');
 		$client->setClientSecret('cX8eLDSE5mdFY6BXwzz1pXmn');
-		$client->setRedirectUri('https://www.pingelo.com/oauth2callback');
+		//$client->setRedirectUri('https://www.pingelo.com/oauth2callback');
 		$client->setDeveloperKey('AIzaSyCOPD8gAKBEm4guY-o-TS8HOl600Zm3BHs');
 
 		$oauth2 = new apiOauth2Service($client);
@@ -105,17 +105,6 @@ class Oauth2callbackController {
 			//'email' => $email,
 			//'img' => $img,
 			//'personMarkup' => $personMarkup,
-		));
-
-	}
-
-	public function view() {
-		error_log('oauth2callbackController->view');
-
-		Paraglide::render_view('main/index', array(
-			//'breadcrumbs' => $this->_breadcrumbs,
-			//'tabs' => $this->_tabs,
-			//'title' => 'Admin Login',
 		));
 
 	}
