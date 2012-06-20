@@ -41,6 +41,19 @@ var controller_action = '<?= Paraglide::$action ?>';
               }
             ?>
             <?php if(empty($current_email)): ?>
+            <?php 
+              $client = new apiClient();
+              $client->setApplicationName("Pingelo");
+              // Visit https://code.google.com/apis/console?api=plus to generate your
+              // oauth2_client_id, oauth2_client_secret, and to register your oauth2_redirect_uri.
+
+              $client->setClientId('191654827151.apps.googleusercontent.com');
+              $client->setClientSecret('cX8eLDSE5mdFY6BXwzz1pXmn');
+              $client->setRedirectUri('https://www.pingelo.com/oauth2callback');
+              $client->setDeveloperKey('AIzaSyCOPD8gAKBEm4guY-o-TS8HOl600Zm3BHs');
+
+              $authUrl = $client->createAuthUrl();
+            ?>
               <div class="btn-group pull-right">
                 <a class="btn btn-primary" href="<?= $authUrl ?>">
                   <i class="icon-user icon-white"></i> Login with Google Apps    
