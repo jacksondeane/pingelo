@@ -1,29 +1,28 @@
 <?php
-require_once APP_PATH . 'lib/helpers/EloRating.php';
-require_once APP_PATH . 'models/result.php';
-require_once APP_PATH . 'models/session_helper.php';
+//require_once APP_PATH . 'models/bet.php';
+//require_once APP_PATH . 'models/transaction.php';
+//require_once APP_PATH . 'models/user_email.php';
+//require_once APP_PATH . 'models/user_role.php';
 require_once APP_PATH . 'lib/apis/google/apiClient.php';
 require_once APP_PATH . 'lib/apis/google/contrib/apiOauth2Service.php';
 
-class MainController {
-	private $_user;
-	private $_email;
-	private $_authUrl;
+class SessionHelper  {
+	//protected static $_table = 'users';
+	/*
+	public $id;
+	
+	public $date_created;
+	public $date_updated;
+	
+	public $elo_rank = 100;
+	public $twitter_username;
+	public $profile_image_url;
+	
+	public $num_games = 0;
+	public $num_wins = 0;
+	*/
 
-	public $models = array('User');
-
-	public function _preprocess() {
-		//$this->_user = User::logged_in_user();
-		$this->_email = SessionHelper::get_active_user();
-		$this->_authUrl = SessionHelper::get_authUrl();
-	}
-
-	public function index() {
-		error_log('MainController->index');
-		/*
-		$authUrl = null;
-		$email = null;
-
+	public static function get_active_user() {
 		session_start();
 		$client = new apiClient();
 		$client->setApplicationName("Pingelo");
@@ -37,7 +36,9 @@ class MainController {
 
 		$oauth2 = new apiOauth2Service($client);
 
+
 		if (isset($_SESSION['token'])) {
+			
 			$client->setAccessToken($_SESSION['token']);
 
 			if ($client->getAccessToken()) {
@@ -52,42 +53,20 @@ class MainController {
 			  	$_SESSION['token'] = $client->getAccessToken();
 			  	$_SESSION['email'] = $email;
 
-			} else {
-				//error_log('getAccessToken->createAuthUrl');
-			  	$authUrl = $client->createAuthUrl();
 			}
-
 		} else {
 			error_log('no [token]');
 		}
-		
 
-		$authUrl = $client->createAuthUrl();
-		*/
+		return $email;
 
-		$leaders = User::get_leaders();
-		$last_20_results = Result::top(20);
-		
-		//session_destroy();
-		
-		Paraglide::render_view('main/index', array(
-			'leaders' => $leaders,
-			'last_20_results' => $last_20_results,
-			'authUrl' => $authUrl,
-			'email' => $email,
-		));
 	}
 
-	public function logout() {
-		
-		error_log('logout');
-		
+	public static function get_authUrl() {
+
 		session_start();
 		$client = new apiClient();
 		$client->setApplicationName("Pingelo");
-		// Visit https://code.google.com/apis/console?api=plus to generate your
-		// oauth2_client_id, oauth2_client_secret, and to register your oauth2_redirect_uri.
-
 		$client->setClientId('191654827151.apps.googleusercontent.com');
 		$client->setClientSecret('cX8eLDSE5mdFY6BXwzz1pXmn');
 		$client->setRedirectUri('https://www.pingelo.com/oauth2callback');
@@ -95,21 +74,8 @@ class MainController {
 
 		$oauth2 = new apiOauth2Service($client);
 
-		unset($_SESSION['token']);
-		$client->revokeToken();
-
 		$authUrl = $client->createAuthUrl();
 
-		$leaders = User::get_leaders();
-		$last_20_results = Result::top(20);
-
-		Paraglide::render_view('main/index', array(
-			'leaders' => $leaders,
-			'last_20_results' => $last_20_results,
-			'authUrl' => $this->_authUrl,
-			'email' => $this->_email,
-		));
-		
+		return $authUrl;
 	}
-
 }
