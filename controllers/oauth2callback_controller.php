@@ -33,7 +33,12 @@ class Oauth2callbackController {
 
 		if (isset($_GET['code'])) {
 			error_log('Oauth2callbackController -> have [code]');
+			error_log('Oauth2callbackController -> authenticate');
+		  	$client->authenticate();
+		  	error_log('Oauth2callbackController -> setting SESSION[token]');
+		  	$_SESSION['token'] = $client->getAccessToken();
 
+		  	/*
 			if ($client->getAccessToken()) {
 
 				error_log('Oauth2callbackController -> getAccessToken');
@@ -55,6 +60,7 @@ class Oauth2callbackController {
 				//	error_log('createAuthUrl');
 				//  	$authUrl = $client->createAuthUrl();
 			}
+			*/
 		} else {
 			error_log('Oauth2callbackController -> no [code]');
 		}
