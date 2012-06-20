@@ -73,8 +73,8 @@ class MainController {
 		Paraglide::render_view('main/index', array(
 			'leaders' => $leaders,
 			'last_20_results' => $last_20_results,
-			'authUrl' => $authUrl,
-			'email' => $email,
+			'authUrl' => $this->_authUrl,
+			'email' => $this->_email,
 		));
 	}
 
