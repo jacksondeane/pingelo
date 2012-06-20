@@ -25,17 +25,16 @@ class Oauth2callbackController {
 
 		$client->setClientId('191654827151.apps.googleusercontent.com');
 		$client->setClientSecret('cX8eLDSE5mdFY6BXwzz1pXmn');
-		//$client->setRedirectUri('https://www.pingelo.com/oauth2callback');
+		$client->setRedirectUri('https://www.pingelo.com/oauth2callback');
 		$client->setDeveloperKey('AIzaSyCOPD8gAKBEm4guY-o-TS8HOl600Zm3BHs');
 
 		$oauth2 = new apiOauth2Service($client);
 
 
 		if (isset($_GET['code'])) {
-
-
 			if ($client->getAccessToken()) {
-				error_log('getAccessToken');
+
+				error_log('Oauth2callbackController -> getAccessToken');
 		  		$user = $oauth2->userinfo->get();
 
 		  		// These fields are currently filtered through the PHP sanitize filters.
@@ -46,7 +45,9 @@ class Oauth2callbackController {
 		  		//$personMarkup = "$email<div><img src='$img?sz=50'></div>";
 
 		  		// The access token may have been updated lazily.
+		  		error_log('Oauth2callbackController -> setting session token');
 		  		$_SESSION['token'] = $client->getAccessToken();
+
 			} 
 
 			//else {
