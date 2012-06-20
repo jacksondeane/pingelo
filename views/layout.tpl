@@ -35,11 +35,10 @@ var controller_action = '<?= Paraglide::$action ?>';
           <a class="brand" href="<?= Paraglide::url('', '') ?>">pingelo</a>
           
             <?php 
-              session_start(); 
+              //session_start(); 
               if (isset($_SESSION['email'])) {
                 $current_email = $_SESSION['email'];  
               }
-              //session_destroy();
             ?>
             <?php if(empty($current_email)): ?>
               <div class="btn-group pull-right">
