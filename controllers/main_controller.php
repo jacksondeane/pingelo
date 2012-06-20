@@ -62,7 +62,7 @@ class MainController {
 		  	$img = filter_var($user['picture'], FILTER_VALIDATE_URL);
 
 		  	// The access token may have been updated lazily.
-		  	_SESSION['token'] = $client->getAccessToken();
+		  	$_SESSION['token'] = $client->getAccessToken();
 
 		} else {
 			error_log('createAuthUrl');
