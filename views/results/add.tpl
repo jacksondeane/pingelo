@@ -92,7 +92,23 @@
 		</div>
 	</div>
 	<div class="span4">
-		<div class="well">d</div>
+		<div class="well">
+			<?php if(!empty($last_20_results)): ?>
+			<h2>Last 20:</h2>
+			<?php foreach ($last_20_results as $result): ?>
+				<?php $winner_change = $result->winner_rank_after - $result->winner_rank_before;  ?>
+				<?php $loser_change = $result->loser_rank_before - $result->loser_rank_after;  ?>
+
+				<div>
+					<span class="label label-success">+<?= $winner_change ?></span>
+					<a href="<?= Paraglide::url('users', null, $result->winner_user->twitter_username) ?>" ><?= $result->winner_user->twitter_username ?></a>
+					
+					   <em>def.</em>  <a href="<?= Paraglide::url('users', null, $result->loser_user->twitter_username) ?>" ><?= $result->loser_user->twitter_username ?></a> 
+
+				</div>
+			<?php endforeach; ?>
+			<?php endif; ?>
+		</div>
 	</div>
 
 

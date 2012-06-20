@@ -124,6 +124,8 @@ class ResultsController {
 			'order' => '-elo_rank',
 		));
 		
+		$last_20_results = Result::top(20);
+
 		Paraglide::render_view('results/add', array(
 			'users' => $users,
 			'new_ratings' => $new_ratings,
@@ -132,6 +134,7 @@ class ResultsController {
 			'error_msg' => $error_msg,
 			'authUrl' => $this->_authUrl,
 			'email' => $this->_email,
+			'last_20_results' => $last_20_results,
 		));
 	}
 
