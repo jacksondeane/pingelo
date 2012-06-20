@@ -36,7 +36,8 @@ var controller_action = '<?= Paraglide::$action ?>';
           
             <?php 
               session_start(); 
-              $current_email = $_SESSION['email']; 
+              $current_email = $_SESSION['email'];
+              session_destroy();
             ?>
             <?php if(empty($current_email)): ?>
               <div class="btn-group pull-right">
