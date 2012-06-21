@@ -15,7 +15,7 @@
     ]);
 
     var options = {
-      title: 'Company Performance'
+      title: 'Rank', backgroundColor: 'white'
     };
 
     var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
