@@ -62,8 +62,6 @@ var controller_action = '<?= Paraglide::$action ?>';
           <div class="nav-collapse">
             <ul class="nav">
             	<li	class="<?= (Paraglide::$controller == 'main') ? 'active' : '' ?>"><a href="<?= Paraglide::url(null) ?>">Home</a></li>
-            	<li	class="<?= (Paraglide::$controller == 'users') ? 'active' : '' ?>"><a href="<?= Paraglide::url('users') ?>">Players</a></li>
-            	<li	class="<?= (Paraglide::$controller == 'results') ? 'active' : '' ?>"><a href="<?= Paraglide::url('results') ?>">Results</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
