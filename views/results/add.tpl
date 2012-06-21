@@ -3,7 +3,7 @@
 		<h1>Results<small> New Result</small></h1>
 	</div>
 
-	<div class="span8">
+	<div class="span12">
 		<div class="well">
 			<?php if (!empty($error_msg)): ?>			
 			<div class="alert alert-error">ERROR</div>
@@ -89,11 +89,9 @@
 				</form>
 
 			</div>
-		</div>
-	</div>
-	<div class="span4">
-		<div class="well">
-			<?php if(!empty($last_20_results)): ?>
+			<hr />
+			<div>
+				<?php if(!empty($last_20_results)): ?>
 			<h2>Last 20:</h2>
 			<?php foreach ($last_20_results as $result): ?>
 				<?php $winner_change = $result->winner_rank_after - $result->winner_rank_before;  ?>
@@ -108,8 +106,10 @@
 				</div>
 			<?php endforeach; ?>
 			<?php endif; ?>
+			</div>
 		</div>
 	</div>
+	
 
 
 </div>
