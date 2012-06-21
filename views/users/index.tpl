@@ -24,20 +24,10 @@
 </script>
 
 <div class="row">
-	<div class="span8">
+	<div class="span12">
 		<div class="well">
-			<?= $user->twitter_username ?>
-			<div id="chart_div" style="width: 650px; height: 500px;"></div>
-		</div>
-	</div>
-	<div class="span4">
-		<div class="well">
-			<?php if (!empty($results)): ?>
-				<?php foreach ($results as $r): ?>
-					<?= $r?><br />
-				<?php endforeach; ?>
-			<?php endif; ?>
-
+			<h2><?= $user->twitter_username ?></h2>
+			<div id="chart_div" style="width: 1000px; height: 600px;"></div>
 		</div>
 	</div>
 </div>
