@@ -1,6 +1,7 @@
 <?php
 require_once APP_PATH . 'lib/helpers/EloRating.php';
 require_once APP_PATH . 'models/result.php';
+require_once APP_PATH . 'models/user.php';
 
 class UsersController {
 	private $_user;
@@ -16,13 +17,16 @@ class UsersController {
 		$user = User::find_by_twitter_username($username);
 		$leaders = User::get_leaders();
 		
-		$elo_rating = new Rating(116, 84, 1, 0);
-		$new_ratings = $elo_rating->getNewRatings();
+		//$elo_rating = new Rating(116, 84, 1, 0);
+		//$new_ratings = $elo_rating->getNewRatings();
 		
+		$results = Result::get_results_for_user($username);
+
 		Paraglide::render_view('users/index', array(
-			'leaders' => $leaders,
-			'new_ratings' => $new_ratings,
+			//'leaders' => $leaders,
+			//'new_ratings' => $new_ratings,
 			'user' => $user,
+			'results' => $results,
 		));
 	}
 	

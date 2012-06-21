@@ -17,6 +17,8 @@ var controller_action = '<?= Paraglide::$action ?>';
 
 <script type="text/javascript" src="<?= SITE_ROOT ?>scripts/main.js"></script>
 
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
 <?php if (file_exists(APP_PATH . 'public/scripts/helpers/' . Paraglide::$controller . '.js')): ?>
 	<script type="text/javascript" src="<?= SITE_ROOT ?>scripts/helpers/<?= Paraglide::$controller ?>.js"></script>
 <?php endif; ?>
