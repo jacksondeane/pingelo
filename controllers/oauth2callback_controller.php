@@ -41,87 +41,33 @@ class Oauth2callbackController {
 		  	$_SESSION['token'] = $client->getAccessToken();
 		  	header('Location: http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']);
 
-		  	/*
+		  	
 			if ($client->getAccessToken()) {
-
 				error_log('Oauth2callbackController -> getAccessToken');
 		  		$user = $oauth2->userinfo->get();
 
 		  		// These fields are currently filtered through the PHP sanitize filters.
 		  		// See http://www.php.net/manual/en/filter.filters.sanitize.php
 		  	
-		  		//$email = filter_var($user['email'], FILTER_SANITIZE_EMAIL);
-		  		//$img = filter_var($user['picture'], FILTER_VALIDATE_URL);
-		  		//$personMarkup = "$email<div><img src='$img?sz=50'></div>";
+		  		$email = filter_var($user['email'], FILTER_SANITIZE_EMAIL);
+		  		error_log('email= ' . $email);
 
-		  		// The access token may have been updated lazily.
-		  		error_log('Oauth2callbackController -> setting session token');
-		  		$_SESSION['token'] = $client->getAccessToken();
+		  		$domain = substr(strrchr($email, "@"), 1);
+		  		error_log('domain= ' . $domain);
 
-			} else {
-				error_log('FAIL -> getAccessToken');
-				//	error_log('createAuthUrl');
-				//  	$authUrl = $client->createAuthUrl();
+		  		if ($domain == 'thumb.it') {
+		  			// The access token may have been updated lazily.
+		  			error_log('Oauth2callbackController -> setting session token');
+		  			$_SESSION['token'] = $client->getAccessToken();	
+		  		}
+		  		
+
 			}
-			*/
-		} else {
-			error_log('Oauth2callbackController -> no [code]');
-		}
+			
+		} 
 
-
-		/*
-		if (isset($_GET['code'])) {
-			error_log('authenticate');
-
-		  	$client->authenticate();
-
-		  	$_SESSION['token'] = $client->getAccessToken();
-		  	$redirect = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
-		  	header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
-
-		}
-
-		if (isset($_SESSION['token'])) {
-			error_log('HAVE TOKEN');
-		 	$client->setAccessToken($_SESSION['token']);
-		}
-
-		if (isset($_REQUEST['logout'])) {
-			error_log('logout');
-		  	unset($_SESSION['token']);
-		  	$client->revokeToken();
-		}
-
-		if ($client->getAccessToken()) {
-			error_log('getAccessToken');
-		  	$user = $oauth2->userinfo->get();
-
-		  	// These fields are currently filtered through the PHP sanitize filters.
-		  	// See http://www.php.net/manual/en/filter.filters.sanitize.php
-		  	$email = filter_var($user['email'], FILTER_SANITIZE_EMAIL);
-		  	$img = filter_var($user['picture'], FILTER_VALIDATE_URL);
-		  	$personMarkup = "$email<div><img src='$img?sz=50'></div>";
-
-		  	// The access token may have been updated lazily.
-		  	$_SESSION['token'] = $client->getAccessToken();
-		} else {
-			error_log('createAuthUrl');
-		  	$authUrl = $client->createAuthUrl();
-		}
-		*/
 		error_log('Oauth2callbackController->redirecting to main');
 		Paraglide::redirect('main');
-
-		/*
-		Paraglide::render_view('main/index', array(
-			//'breadcrumbs' => $this->_breadcrumbs,
-			//'tabs' => $this->_tabs,
-			//'title' => 'Admin Login',
-			//'email' => $email,
-			//'img' => $img,
-			//'personMarkup' => $personMarkup,
-		));
-		*/
 	}
 
 }
