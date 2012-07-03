@@ -71,8 +71,11 @@ class User extends Paragon {
 	public $num_games = 0;
 	public $num_wins = 0;
 	
+
 	public static function get_leaders() {
 		$leaders = self::find(array(
+			'conditions' => array(
+				'num_games' => self::condition('gt', 9), ),
 			'order' => '-elo_rank',
 		));
 		
