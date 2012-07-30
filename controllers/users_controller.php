@@ -131,6 +131,7 @@ class UsersController {
 
 		$users = User::find(array(
 			'order' => '-elo_rank',
+			'is_active' => 1,
 		));
 		
 		Paraglide::render_view('results/add', array(

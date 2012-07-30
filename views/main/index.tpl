@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="span8">
 		<div class="well">
-			<h2>Leaders:</h2>
+			<h2>Leader Board:<small> (players with less than 10 games not shown)</small></h2>
 			<table class="table table-striped table-condensed">
 				<tbody>
 				<?php if (!empty($leaders)): ?>

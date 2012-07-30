@@ -122,6 +122,7 @@ class ResultsController {
 
 		$users = User::find(array(
 			'order' => '-elo_rank',
+			'is_active' => 1,
 		));
 		
 		$last_20_results = Result::top(20);
@@ -165,7 +166,7 @@ class ResultsController {
 					$new_user->twitter_username = $new_twitter;
 					$new_user->num_wins = 0;
 					$new_user->num_games = 0;
-					$new_user->elo_rank = 1000;
+					$new_user->elo_rank = 100;
 					
 					if ($new_user->save()) {
 						$add_success_msg = $new_twitter . "added!";
