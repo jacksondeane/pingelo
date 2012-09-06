@@ -83,6 +83,18 @@ class User extends Paragon {
 		
 		return $leaders;
 	}
+
+	public static function get_opponents($user_id = null) {
+		$opponents = self::find(array(
+			'conditions' => array(
+				//'num_games' => self::condition('gt', 9),
+				'is_active' => 1,
+			),
+			'order' => '-elo_rank',
+		));
+		
+		return $leaders;
+	}
 	
 	public static function find_by_twitter_username($twitter_username) {
 		return User::find_one(array(

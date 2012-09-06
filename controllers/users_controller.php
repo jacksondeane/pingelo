@@ -15,10 +15,7 @@ class UsersController {
 	public function index($username = null) {
 
 		$user = User::find_by_twitter_username($username);
-		$leaders = User::get_leaders();
-		
-		//$elo_rating = new Rating(116, 84, 1, 0);
-		//$new_ratings = $elo_rating->getNewRatings();
+		//$leaders = User::get_leaders();
 		
 		$results = Result::get_results_for_user($username);
 
