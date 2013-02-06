@@ -67,12 +67,14 @@ class MainController {
 
 		$leaders = User::get_leaders();
 		$last_20_results = Result::top(20);
+		$last_50_results = Result::top(50);
 		
 		//session_destroy();
 		
 		Paraglide::render_view('main/index', array(
 			'leaders' => $leaders,
 			'last_20_results' => $last_20_results,
+			'last_50_results' => $last_50_results,
 			'authUrl' => $this->_authUrl,
 			'email' => $this->_email,
 		));

@@ -36,9 +36,9 @@
 	</div>
 	<div class="span4">
 		<div class="well">
-			<?php if(!empty($last_20_results)): ?>
-			<h2>Last 20:</h2>
-			<?php foreach ($last_20_results as $result): ?>
+			<?php if(!empty($last_50_results)): ?>
+			<h2>Last 50:</h2>
+			<?php foreach ($last_50_results as $result): ?>
 				<?php $winner_change = $result->winner_rank_after - $result->winner_rank_before;  ?>
 				<?php $loser_change = $result->loser_rank_before - $result->loser_rank_after;  ?>
 
